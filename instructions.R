@@ -10,3 +10,8 @@ create_website(dir=here::here(), "training1", gh_pages=TRUE)  #gh_pages is githu
 
 # add include slides directory
 # put slides in there and HAVE TO KNIT IT TO MAKE HTML
+
+#how to deploy to gh_pages * build * commit * push * at repo in GH, Settings >
+#github pages right above danger zone.  Select None and change to master. and
+#select /docs folder and save
+# add link manually to main page of repo to paste in the website name. 
