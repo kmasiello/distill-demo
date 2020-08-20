@@ -9,4 +9,6 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Things I like"
+      href: likes.html
 output: distill::distill_article

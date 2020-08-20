@@ -14,7 +14,7 @@ class: right
 Hello I'm slide 1
 # what happens here? 
 class: left 
-can I move to left?
+can I move to left? no
 
 ---
 name: slide2

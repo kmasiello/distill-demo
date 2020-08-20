@@ -1,0 +1,14 @@
+---
+title: "Things I like"
+description: |
+  what you should bring to a meeting
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Things I like:
+* cookies
+* chocolate chip cookies
+* croissants 
