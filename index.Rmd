@@ -1,0 +1,30 @@
+---
+title: "training1"
+description: |
+  Welcome to the website. I hope you enjoy it!
+site: distill::distill_website
+author: Katie Masiello
+include: "slides/"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+## Welcome
+
+Packages needed:
+
+```{r eval = FALSE}
+library(palmerpenguins)
+```
+
+# Here are my slides
+[view](slides/slides.html)

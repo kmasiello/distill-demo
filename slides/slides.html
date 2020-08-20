@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>First xaringan presentation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Katie Masiello" />
+    <link href="slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="slides_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# First <code>xaringan</code> presentation
+## easy peasy
+### Katie Masiello
+### 8/20/2020
+
+---
+
+
+
+class: right
+Hello I'm slide 1
+# what happens here? 
+class: left 
+can I move to left?
+
+---
+name: slide2
+And I'm slide 2
+[go to that other slide](#protip)
+---
+
+# Header
+
+And now I'll **spice it up**
+---
+# About *me*
+I like cookies
+
+
+---
+class: center, middle, inverse 
+each slide has its own YAML
+choices for class:
+* top
+* bottom
+* middle  
+&lt;br&gt;
+* left
+* right 
+* center  
+&lt;br&gt;
+* inverse
+
+
+
+---
+name: protip
+## Pro Tip 
+`remark.js`
+[go to that other slide](#slide2)
+---
+# Guess what?  I love this font
+---
+# Incremental reveals
+This is my first point  
+--
+wait for it...  
+--
+it's really cool  
+--
+I love _chocolate chip cookies_
+---
+# Let's do two columns
+.pull-left[
+Here's some text
+]
+.pull-right[
+# Here's more text
+]
+
+---
+# Let's do two columns
+.left-column[
+Here's some text that's in a narrower column
+]
+.right-column[
+# Here's more text
+With more room 
+* and bullets
+* and more
+]
+
+---
+# Data
+
+```r
+summary(penguins)
+```
+
+```
+##       species          island    bill_length_mm  bill_depth_mm  
+##  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
+##  Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  
+##  Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  
+##                                  Mean   :43.92   Mean   :17.15  
+##                                  3rd Qu.:48.50   3rd Qu.:18.70  
+##                                  Max.   :59.60   Max.   :21.50  
+##                                  NA's   :2       NA's   :2      
+##  flipper_length_mm  body_mass_g       sex           year     
+##  Min.   :172.0     Min.   :2700   female:165   Min.   :2007  
+##  1st Qu.:190.0     1st Qu.:3550   male  :168   1st Qu.:2007  
+##  Median :197.0     Median :4050   NA's  : 11   Median :2008  
+##  Mean   :200.9     Mean   :4202                Mean   :2008  
+##  3rd Qu.:213.0     3rd Qu.:4750                3rd Qu.:2009  
+##  Max.   :231.0     Max.   :6300                Max.   :2009  
+##  NA's   :2         NA's   :2
+```
+
+---
+Alison's YAML
+```
+author: Alison
+date: '2020-08-20'
+title: Presenting the penguins
+output:
+  xaringan::moon_reader:
+    css:
+    - default
+    - rladies
+    - rladies-fonts
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ```
+      
+---
+# Side by side code + plot
+Use clever chunk options to reference each chunk
+
+1. Code first, plot second  
+  * Chunk 1: {r plot-last, fig.show = 'hide'} #hide figure
+  * Chunk 2: {r ref.label = 'plot-last', echo = FALSE} #dont show code
+  
+
+2. Plot first, code second
+  * Chunk 1: {r plot-first, echo = FALSE}
+  * Chunk 2: {r ref.label = 'plot-first', eval = FALSE}
+
+---
+# example of 1
+.pull-left[
+
+```r
+#code goes here
+```
+]
+.pull-right[
+
+]
+
+---
+example of 2 
+.pull-left[
+
+]
+.pull-right[
+
+```r
+#code goes here
+```
+]
+---
+# Make a your turn index counter
+
+This is a hot tip to ensure you don't have to renumber and increment things wrong 
+# Your turn # 1
+
+Try this!
+
+# Your turn # 2
+
+Check this!
+
+---
+# Pull info from your YAML
+could use this to customize customer presentations easily
+Hi my name is Katie Masiello , and welcome to First `xaringan` presentation for RStudio
+---
+# Use `params` to wrangle links
+Maybe actually this would be a better place to put the customer name. 
+```
+params:
+  wifi_name: TBD
+  wifi_pass: penguins-are-the-new-iris
+  cloud_link: RStudio Cloud link here
+  repo_link: Link to Github here
+  site_link: rstd.io/tip
+  ```
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
